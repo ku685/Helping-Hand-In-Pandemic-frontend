@@ -1,0 +1,49 @@
+
+<nav class ="navbar navbar-expand-sm bg-primary navbar-dark">
+  <ul class = "navbar-nav">
+    <li class ="nav-item">
+        <a routerLink="" routerLinkActive="active" class="nav-link">Home</a>
+    </li>
+    <li class ="nav-item">
+      <a routerLink="/userlist" routerLinkActive="active" class="nav-link">User List</a>
+  </li>
+  <li class ="nav-item">
+      <a routerLink="/volunteerlist" routerLinkActive="active" class="nav-link">Volunteer List</a>
+  </li>
+  <li class ="nav-item">
+      <a routerLink="/allrequest" routerLinkActive="active" class="nav-link">Request</a>
+  </li>
+
+  </ul>
+</nav>
+
+<BODY>
+<h2 style="text-align: center;">USERS</h2>
+<table class ="table table-striped">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Date of birth</th>
+            <th>Email Id</th>
+            <th>Mobile</th>
+            <th>Gender</th>
+            <th>Actions</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor= "let u of user">
+            <td>{{u.fullName }}</td>
+            <td>{{u.age }}</td>
+            <td>{{ u.email}}</td>
+            <td>{{ u.mobile}}</td>
+            <td>{{ u.gender}}</td>
+            <td >
+                <button *ngIf="u.status==='disable'"  (click)="enableUser(u.userId)" class="btn btn-info">Enable</button>
+                <button  *ngIf="u.status==='enable'" (click)="disableUser(u.userId)" class="btn btn-danger" >Disable</button>
+                <!-- <button (click)="userDetails(u.userId)" class="btn btn-info" style="margin-left:10px">View</button> -->
+            </td>
+        </tr>
+    </tbody>
+</table>
+</BODY>

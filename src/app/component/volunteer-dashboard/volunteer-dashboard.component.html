@@ -1,0 +1,71 @@
+
+<nav class ="navbar navbar-expand-sm bg-primary navbar-dark">
+    <ul class = "navbar-nav">
+      <li class ="nav-item">
+          <a routerLink="" routerLinkActive="active" class="nav-link">Logout</a>
+      </li>
+      <li class ="nav-item">
+        <a routerLink="/history" routerLinkActive="active" class="nav-link">History</a>
+    </li>
+    
+   
+    </ul>
+  </nav>
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<div class="row">
+  
+<div  class="col-md-2.5"><img   src="https://i.pinimg.com/550x/94/fb/9e/94fb9e94f0db7e3d429df2d9c64527d2.jpg" alt="Trulli" width="500" height="700"></div>
+
+<div class="col-md-9" class="xyz">
+
+  <div class="search-hero">
+    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Start searching for a Request by Pincode or City ">
+  </div>
+<table class ="table table-striped">
+  <thead>
+      <tr>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Help Requirements</th>
+          <th>User Address</th>
+          <th>User Pincode</th>
+          <th>User City</th>
+          <th>Request</th>
+       </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor= "let r of request | filter:searchText" >
+      <td *ngIf="r.volunteer==null" >{{r.createdAt|date:'dd-MM-yyyy'}}</td>
+      <td *ngIf="r.volunteer==null">{{r.createdAt|date:'hh:mm:ss'}}</td> 
+      <td *ngIf="r.volunteer==null" >{{ r.requestType }}</td>
+      <td *ngIf="r.volunteer==null">{{r.user.address }}</td>
+      <td *ngIf="r.volunteer==null">{{r.user.pincode }}</td>
+      <td *ngIf="r.volunteer==null">{{r.user.city }}</td>
+      <td *ngIf="r.volunteer==null" >  
+          <button (click)="acceptRequest(r.requestId)" class="btn btn-info" style="margin-left:10px">Accept</button>
+          <!-- <label *ngIf="r.volunteer!=null"  style="margin-left:10px">Volunteer Assigned</label> -->
+      </td>
+    </tr>
+  </tbody>
+
+</table>
+</div>
+</div>
+
+
+<div>
+    <footer class ="footer">
+        <div class="container">
+          <span>All Rights Reserved 2022 @kushal</span>
+        </div>
+      </footer>
+</div>
+
+
+
+</body>
+</html>

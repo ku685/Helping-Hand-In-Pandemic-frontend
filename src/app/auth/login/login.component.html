@@ -1,0 +1,51 @@
+ <!-- <html class="hero-image">  -->
+<div class="containe" >
+    <!-- <div class="row"> -->
+        <!-- <div class="col-md-6">
+            <img src="https://th.bing.com/th/id/R.2a457158cb8ec82743515fce5158fab3?rik=kxpD6s3VxwH2Vw&riu=http%3a%2f%2fwww.nandscvs.org%2fwp-content%2fuploads%2f2016%2f04%2fvolunteer-1888823_1280.png&ehk=eE%2b67OmgUzRubvpZns1gRvwEXrG7mUgG2sW%2fAXgdDgo%3d&risl=&pid=ImgRaw&r=0" alt="Trulli" width="700" height="733">
+        </div> -->
+        <div id="box" class="tp" >
+            <h1  class="tx" style="padding-top:20px ;" class="text-success text-center ">WELCOME
+              
+            </h1>
+            <form action="" class="" style="margin-bottom: 20px;" >
+                <div  class="tx" class="form-floating mb-3 ">
+                    <h3 class="text-primary mb-3">LOGIN</h3>
+                    <input type="email" class="form-control" id="floatingInput" placeholder="UserName" name="username" [(ngModel)] ="username">
+                    <label for="floatingInput"></label>
+                  </div>
+                  <div class="tx" class="form-floating mb-3">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name ="password" [(ngModel)] ="password">
+                    <label for="floatingPassword"></label>
+                  </div>
+                 
+                  <div class="tx">
+                  
+                   
+                   <input    type="radio"  id="user" name="type" value="user" [(ngModel)] ="type">USER
+                   
+                   <input style="margin-left:70px;"  type="radio" id="admin" name="type" value="admin" [(ngModel)] ="type">ADMIN
+                  <input  style = "margin-left:70px" type="radio" id="volunteer" name="type" value="volunteer" [(ngModel)] ="type">VOLUNTEER
+                  
+              </div>
+                  <!-- <select class="form-select mb-3" aria-label="Default select example" name="type" [(ngModel)] ="type">
+    
+                    <option selected>Login By</option>
+                    <option *ngFor =" let r of roles" [value] ="r">{{r}}</option>
+                    
+                    
+                  </select> -->
+                  <div style="margin-top: 20px;"  class="y">
+                    <button class="btn btn-outline-success " type="button" (click) ="signup()" >REGISTER?</button>
+                    <button style='margin-left:220px'  class="btn btn-outline-success " type="button" (click) ="login()">LOGIN</button>
+                    
+                  </div>
+                  <div style="margin-bottom: 20px;"></div>
+                  
+            </form>
+        </div>
+        
+       
+    </div>
+  <!-- </html>  -->
+<!-- </div> -->

@@ -1,0 +1,22 @@
+
+
+.footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 5px 5px #888888;
+    height: 40px;
+    background-color: blue;
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+}
+.containe{
+    border-radius: 5px;    
+    background: rgb(247, 248, 249);
+    box-shadow: 5px 5px 5px #888888;
+    margin-top:150px;
+    margin-left:500px;
+    margin-right:500px;
+    
+}

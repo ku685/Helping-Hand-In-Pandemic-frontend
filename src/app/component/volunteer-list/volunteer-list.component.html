@@ -1,0 +1,47 @@
+<nav class ="navbar navbar-expand-sm bg-primary navbar-dark">
+  <ul class = "navbar-nav">
+    <li class ="nav-item">
+        <a routerLink="" routerLinkActive="active" class="nav-link">Home</a>
+    </li>
+    <li class ="nav-item">
+      <a routerLink="/userlist" routerLinkActive="active" class="nav-link">User List</a>
+  </li>
+  <li class ="nav-item">
+      <a routerLink="/volunteerlist" routerLinkActive="active" class="nav-link">Volunteer List</a>
+  </li>
+  <li class ="nav-item">
+      <a routerLink="/allrequest" routerLinkActive="active" class="nav-link">Request</a>
+  </li>
+
+  </ul>
+</nav>
+<body>
+<h2 class="center" style="text-align: center;">VOLUNTEER</h2>
+<table class ="table table-striped">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Date of birth</th>
+            <th>Email Id</th>
+            <th>Mobile</th>
+            <th>Gender</th>
+            <th>Actions</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor= "let v of volunteer">
+            <td>{{v.fullName }}</td>
+            <td>{{v.age }}</td>
+            <td>{{v.email}}</td>
+            <td>{{v.mobile}}</td>
+            <td>{{v.gender}}</td>
+            <td>
+                <button *ngIf="v.status==='disable'" (click)="enableVolunteer(v.volunteerId)" class="btn btn-info">Enable</button>
+                <button *ngIf="v.status==='enable'" (click)="disableVolunteer(v.volunteerId)" class="btn btn-danger" >Disable</button>
+                <!-- <button (click)="volunteerDetails(v.volunteerId)" class="btn btn-info" style="margin-left:10px">View</button> -->
+            </td>
+        </tr>
+    </tbody>
+</table>
+</body>

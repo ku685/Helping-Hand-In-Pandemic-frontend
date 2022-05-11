@@ -1,0 +1,52 @@
+
+  <body>
+    <nav class ="navbar navbar-expand-sm bg-primary navbar-dark">
+        <ul class = "navbar-nav">
+          <li class ="nav-item">
+              <a routerLink="" routerLinkActive="active" class="nav-link">Home</a>
+          </li>
+          <li class ="nav-item">
+            <a routerLink="/userlist" routerLinkActive="active" class="nav-link">User List</a>
+        </li>
+        <li class ="nav-item">
+            <a routerLink="/volunteerlist" routerLinkActive="active" class="nav-link">Volunteer List</a>
+        </li>
+        <li class ="nav-item">
+            <a routerLink="/allrequest" routerLinkActive="active" class="nav-link">Request</a>
+        </li>
+      
+        </ul>
+      </nav>
+  <div>
+  <h2 style="text-align: center;"> HISTORY</h2>
+  <table class ="table table-striped" style="position: sticky;top: 0" style="background-color: white;">
+      <thead>
+          <tr>
+              <th class="header" scope="col">Request Id</th>
+              <th class="header" scope="col"> Date of Creation</th>
+              <th class="header" scope="col"> Time</th>
+              <th class="header" scope="col">Created By</th>
+              <th class="header" scope="col">Date of acceptance</th>
+              <th class="header" scope="col">Time</th>
+              <th class="header" scope="col">Accepted By</th>
+              
+  
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor= "let r of request">
+              <td>{{r.requestId }}</td>
+              <td>{{r.createdAt|date:'dd-MM-yyyy' }}</td>
+              <td>{{r.createdAt|date:'hh:mm:ss'}}</td>
+              <td>{{r.user.fullName}}</td>
+              <td >{{r.volunteer===null?'':r.acceptedAt|date:'dd-MM-yyyy'}}</td>
+              <td>{{r.volunteer===null?'':r.acceptedAt|date:'hh:mm:ss'}}</td>
+              <td >{{r.volunteer===null?'':r.volunteer.fullName}}</td>
+              
+          </tr>
+      </tbody>
+</table>
+    </div>
+   </body>
+  
+  
